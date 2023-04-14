@@ -1,4 +1,4 @@
-//@ts-check
+// desativado @ts-check
 const frase = "Front End";
 const total = 100.05;
 const empresas = ["Apple", "Microsoft"];
