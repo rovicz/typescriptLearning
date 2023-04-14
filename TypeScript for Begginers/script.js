@@ -26,3 +26,26 @@ const numbers = 100 + 200;
 console.log(strings, numbers);
 
 // Disclaimer: ao usar o @ts-check, o editor passará a indicar erros que seriam pegos pelo TS.
+
+// TypeScript Annotations
+
+const produtos = [
+  {
+    nome: "O Senhor dos Anéis",
+    tipo: "livro",
+  },
+  {
+    nome: "A Guerra dos Tronos",
+    tipo: "livro",
+  },
+  {
+    nome: "Dark Souls",
+    tipo: "jogo",
+  },
+];
+
+function filtrarLivros(dados) {
+  return dados.filter((item) => item.tipo === "livro");
+}
+
+console.log(filtrarLivros(produtos));
