@@ -42,3 +42,11 @@ function transformarPreco(produto: { nome: string; preco: string; }) {
 }
 
 const produtoNovo = transformarPreco(xboxSS); // Retorna um Objeto: {nome: 'Xbox Series S', preco: 'R$ 1890'}
+
+// Exercicios
+
+function normalizarTexto(texto: string) {
+  return texto.trim().toLowerCase();
+}
+
+normalizarTexto(' FrONT-enD   ') // retorna front-end.
