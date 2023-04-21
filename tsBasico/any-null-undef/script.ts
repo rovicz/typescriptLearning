@@ -15,3 +15,19 @@ async function fetchJSON(url: string) {
 }
 
 fetchJSON('https://api.origamid.dev/json/cursos.json'); // Em alguns casos o any faz sentido, como no caso da função json() onde qualquer tipo de dado pode ser retornado, dependendo da API que acessarmos.
+
+// Null
+
+const button = document.querySelector('button');
+const config = localStorage.getItem('config');
+
+if (button !== null) {
+  button.click();
+}
+if (button) {
+  button.click();
+}
+if (button) button.click();
+button?.click();
+
+console.log(typeof null); // null é um tipo primitivo que representa a ausência de valor. É comum em funções do DOM que fazem uma busca, retornarem null quando não são bem sucedidas.
