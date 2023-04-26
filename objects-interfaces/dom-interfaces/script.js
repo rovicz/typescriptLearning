@@ -14,3 +14,14 @@ links.forEach((link) => {
         return link.href;
     }
 });
+// Exercicios:
+const linksExerc = document.querySelectorAll('.link');
+function ativarElemento(elemento) {
+    elemento.style.color = 'red';
+    elemento.style.border = '2px solid red';
+}
+linksExerc.forEach((link) => {
+    if (link instanceof HTMLElement) {
+        ativarElemento(link);
+    }
+});
