@@ -49,3 +49,13 @@ if (AC4 instanceof Publisher) {
 if (R6 instanceof Ativos) {
   console.log(R6.jogadores)
 } // retorna '20000' já que R6 é uma instância de Ativos.
+
+// Exercicios:
+
+const link =  document.getElementById('origamid');
+
+if(link instanceof HTMLAnchorElement) {
+  link.href = link.href.replace('http://', 'https://');
+} // alterou o http para https.
+
+// link é uma instância da coleção HTML, sendo assim, é possível acessar os seus métodos, como o href.
