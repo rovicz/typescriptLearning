@@ -34,3 +34,26 @@ function tipoDado<T>(a: T): {dado: T; tipo: string} {
 tipoDado('A vida é Linda.'); // {dado: 'A vida é Linda.', tipo: 'string'}.
 tipoDado(1000); // {dado: 1000, tipo: 'number'}.
 tipoDado(true); // {dado: true, tipo: 'boolean'}.
+
+// Uso de Extends
+
+function extrairTexto<T extends HTMLElement>(el: T) {
+  return {
+    texto: el.innerText,
+    el
+  }
+}
+
+const link = document.querySelector('a');
+
+if(link) {
+  console.log(extrairTexto(link).el.href) // retorna o href (https://github.com/rovicz).
+}
+
+// Exemplo de Extends
+
+function $<T extends Element>(selector: string): T | null {
+  return document.querySelector(selector);
+}
+
+const link2 = $<HTMLAnchorElement>('a')?.href; // uso de método nativo.

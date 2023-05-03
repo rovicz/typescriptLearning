@@ -26,3 +26,19 @@ function tipoDado(a) {
 tipoDado('A vida é Linda.'); // {dado: 'A vida é Linda.', tipo: 'string'}.
 tipoDado(1000); // {dado: 1000, tipo: 'number'}.
 tipoDado(true); // {dado: true, tipo: 'boolean'}.
+// Uso de Extends
+function extrairTexto(el) {
+    return {
+        texto: el.innerText,
+        el
+    };
+}
+const link = document.querySelector('a');
+if (link) {
+    console.log(extrairTexto(link).el.href); // retorna o href (https://github.com/rovicz).
+}
+// Exemplo de Extends
+function $(selector) {
+    return document.querySelector(selector);
+}
+const link2 = $('a')?.href; // uso de método nativo.
