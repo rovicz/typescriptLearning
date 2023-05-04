@@ -23,3 +23,49 @@ function isString(value: any) {
     return true;
   }
 }
+
+// Never
+
+function abortar(mensagem: string): never { // o Never é utilizado em casos onde a função gera um erro ou termina a aplicação.
+  throw new Error(mensagem);
+}
+
+// abortar('Erro Detectado.') // retorna Erro Detectado como mensagem de Erro, abortando o código.
+
+// Métodos:
+
+interface Quadrado {
+  lado: number;
+  perimetro(lado: number): number
+}
+
+function calcular(forma: Quadrado) {
+  forma.perimetro(3);
+}
+
+// Overload:
+
+function normalizar(valor: string): string;
+function normalizar(valor: string[]): string[];
+function normalizar(valor: string | string[]): string | string[] {
+  if (typeof valor === 'string') {
+    return valor.trim().toLowerCase();
+  } else {
+    return valor.map((item) => item.trim().toLowerCase());
+  }
+}
+
+console.log(normalizar('    ProDUTO').toUpperCase()); // PRODUTO.
+console.log(normalizar(['PROduto    ', '   pRoDuTo2 ', 'PrOdUtO3     '])); // ['produto', 'produto2', 'produto3'].
+
+// Exemplo 02:
+
+function $(seletor: 'a'): HTMLAnchorElement | null;
+function $(seletor: 'video'): HTMLVideoElement | null;
+function $(seletor: string): Element | null;
+function $(seletor: string): Element | null {
+  return document.querySelector(seletor);
+}
+
+$('a')?.click();
+$('video')?.volume;

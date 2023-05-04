@@ -12,3 +12,30 @@ function pintarTela(cor) {
     document.body.style.background = cor;
 }
 pintarTela('#000');
+function isString(value) {
+    if (typeof value === 'string') {
+        return true;
+    }
+}
+// Never
+function abortar(mensagem) {
+    throw new Error(mensagem);
+}
+function calcular(forma) {
+    forma.perimetro(3);
+}
+function normalizar(valor) {
+    if (typeof valor === 'string') {
+        return valor.trim().toLowerCase();
+    }
+    else {
+        return valor.map((item) => item.trim().toLowerCase());
+    }
+}
+console.log(normalizar('    ProDUTO').toUpperCase()); // PRODUTO.
+console.log(normalizar(['PROduto    ', '   pRoDuTo2 ', 'PrOdUtO3     '])); // ['produto', 'produto2', 'produto3'].
+function $(seletor) {
+    return document.querySelector(seletor);
+}
+$('a')?.click();
+$('video')?.volume;
