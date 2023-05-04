@@ -69,3 +69,22 @@ function $(seletor: string): Element | null {
 
 $('a')?.click();
 $('video')?.volume;
+
+
+// Exercicios:
+
+// Crie uma função que arredonda um valor passsado para cima.
+// A função deve receber string ou number.
+// A função deve retornar o mesmo tipo que ela receber.
+function arredondarCima(value: number): number;
+function arredondarCima(value: string): string;
+function arredondarCima(value: number | string): number | string {
+  if (typeof value === 'number') {
+    return Math.ceil(value);
+  } else {
+    return Math.ceil(Number(value)).toString();
+  }
+}
+
+arredondarCima('22.22'); // 23.
+arredondarCima(50.01); // 51.

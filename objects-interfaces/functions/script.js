@@ -39,3 +39,13 @@ function $(seletor) {
 }
 $('a')?.click();
 $('video')?.volume;
+function arredondarCima(value) {
+    if (typeof value === 'number') {
+        return Math.ceil(value);
+    }
+    else {
+        return Math.ceil(Number(value)).toString();
+    }
+}
+arredondarCima('22.22'); // 23.
+arredondarCima(50.01); // 51.
