@@ -56,3 +56,41 @@ function handleProduto(data: unknown) {
     console.log(data);
   }
 }
+
+// Exercicio:
+
+async function fetchAtividade() {
+  const response = await fetch('https://api.origamid.dev/json/cursos.json');
+  const json = await response.json();
+  handleAtividade(json);
+}
+
+fetchAtividade();
+
+interface Curso {
+  nome: string;
+  horas: number;
+  tags: string[];
+}
+
+function isCurso(value: unknown): value is Curso {
+  if (value && typeof value === 'object' && 'nome' in value && 'horas' in value && 'tags' in value) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function handleAtividade(data: unknown) {
+  if (data instanceof Array) {
+    data.filter(isCurso).forEach((item) => {
+      document.body.innerHTML += `
+        <div class='itens'>
+          <h2>Nome: ${item.nome}</h2>
+          <p>Horas: ${item.horas}</p>
+          <p>Tags: ${item.tags}</p>
+        </div>
+      `
+    })
+  }
+}
