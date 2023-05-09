@@ -19,3 +19,17 @@ function getText(selector) {
 }
 const button = getText("button");
 console.log(button); // retornou o proprio elemento (el) seguido do innerText dele (el.innerText) = [button, 'Clique Aqui'].
+// Exercicio(s):
+async function fetchExerc() {
+    const r = await fetch("https://api.origamid.dev/json/vendas.json");
+    const json = await r.json();
+    somarVendas(json);
+}
+function somarVendas(vendas) {
+    let total1 = 0;
+    for (let i = 0; i < vendas.length; i++) {
+        total1 += vendas[i][1];
+    }
+    document.body.innerHTML += `<p>Total: R$ ${total1}</p>`;
+}
+fetchExerc();
