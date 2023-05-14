@@ -27,3 +27,7 @@ interface Transacao {
   pagamento: TransacaoPagamento;
   novo: boolean;
 }
+
+interface countList {
+  [key: string]: number;
+}
