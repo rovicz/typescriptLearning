@@ -19,7 +19,7 @@ interface Dados {
 interface Transacao {
   nome: string;
   id: number;
-  data: string;
+  data: Date;
   status: TransacaoStatus;
   email: string;
   moeda: string;
