@@ -13,9 +13,23 @@ async function handleData() {
   preencherStats(transacoes);
 }
 
+function preencherLista(lista: countList, containerID: string): void {
+  const containerElement = document.getElementById(containerID);
+
+  if (containerElement) {
+    Object.keys(lista).forEach((key) => {
+      containerElement.innerHTML += `
+      <p>${key}: ${lista[key]}</p>
+      `;
+    });
+  }
+}
+
 function preencherStats(transacoes: Transacao[]): void {
   const data = new Stats(transacoes);
-  console.log(data.total);
+
+  preencherLista(data.pagamento, "pagamento");
+  preencherLista(data.status, "status");
 
   const totalElement = document.querySelector<HTMLElement>("#total span");
   if (totalElement) {
