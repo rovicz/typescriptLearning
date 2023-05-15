@@ -31,6 +31,11 @@ function preencherStats(transacoes: Transacao[]): void {
   preencherLista(data.pagamento, "pagamento");
   preencherLista(data.status, "status");
 
+  const diaElement = document.querySelector<HTMLElement>("#dia span");
+  if (diaElement) {
+    diaElement.innerText = data.melhorDia[0];
+  }
+
   const totalElement = document.querySelector<HTMLElement>("#total span");
   if (totalElement) {
     totalElement.innerText = data.total.toLocaleString("pt-br", {
