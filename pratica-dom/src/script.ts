@@ -9,6 +9,6 @@ if (container && elements && controls && elements.children.length) {
     container,
     Array.from(elements.children),
     controls,
-    3000,
+    3000
   );
 }
